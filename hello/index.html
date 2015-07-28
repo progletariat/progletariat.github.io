@@ -1,7 +1,3 @@
-﻿@using System.Linq
-@helper PostDate(DateTime rawDate) {
-    <time datetime="@rawDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss")" pubdate data-updated="true">@rawDate.ToString("MMM d, yyyy")</time>
-}
 
 <html>
   <head>
@@ -24,14 +20,22 @@
   	<div class="wrapper">
 	  <header>
         <h2>Recent posts</h2>
-        @foreach (var post in Enumerable.Take(Model.Posts, 10))
-    		{
-    		    <h3 class="h2link"><a href="/blog/@post.Url/index.html">@post.Title</a></h3>
-    		    <p class="view"><small>@PostDate(post.Date)</small><br />@post.Abstract</p>
-    		}
+    		    <h3 class="h2link"><a href="/blog/2015/07-28-monads/index.html">Monads</a></h3>
+    		    <p class="view"><small>    <time datetime="2015-07-28T10:12:42" pubdate data-updated="true">Jul 28, 2015</time>
+</small><br />
+
+</p>
+    		    <h3 class="h2link"><a href="/blog/2015/07-28-applicative/index.html">Applicative</a></h3>
+    		    <p class="view"><small>    <time datetime="2015-07-28T10:11:43" pubdate data-updated="true">Jul 28, 2015</time>
+</small><br />
+
+</p>
       </header>
       <section>
-		    @RenderBody()
+		    
+
+
+
       </section>
   	</div>
     <script src="/javascripts/scale.fix.js"></script>
