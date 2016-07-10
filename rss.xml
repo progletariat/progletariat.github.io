@@ -1,26 +1,51 @@
 <rss version="2.0">
   <channel>
     <title>Progletariat</title>
-    <link>http://localhost:8080/FsBlog</link>
-    <description>Progletariat (/ˌproʊglɪˈtɛəriːət/): A term used to describe the class of wage-earners (especially programmers) in a capitalist society whose only possession of significant material value is their labour-power (their ability to code).
+    <link>http://www.progletariat.com/</link>
+    <description>Progletariat /ˌproʊglɪˈtɛəriːət/: A term used to describe the class of wage-earners (especially programmers) in a capitalist society whose only possession of any perceived value is their labour-power (their ability to code).
 </description>
     <item>
-      <title>Getting Started</title>
-      <guid>http://localhost:8080/FsBlog/blog/2013/11-09-getting-started</guid>
-      <link>http://localhost:8080/FsBlog/blog/2013/11-09-getting-started/index.html</link>
-      <pubDate>Sat, 09 Nov 2013 12:38:14 GMT</pubDate>
-      <description>&lt;p&gt;If you've much experience with other static site generators like &lt;em&gt;Octopress&lt;/em&gt; or &lt;em&gt;Jekyll&lt;/em&gt; most of this should be fairly familiar, if not, hopefully it won't be too difficult to pick up.&lt;/p&gt;
-
+      <title>Monads &gt;&gt;= Why Bother?</title>
+      <guid>http://www.progletariat.com//blog/2015/08-12-monads-why-bother</guid>
+      <link>http://www.progletariat.com//blog/2015/08-12-monads-why-bother/index.html</link>
+      <pubDate>Wed, 12 Aug 2015 08:08:30 GMT</pubDate>
+      <description>
 
 </description>
     </item>
     <item>
-      <title>Hello, FsBlog!</title>
-      <guid>http://localhost:8080/FsBlog/blog/2013/11-08-hello-fsblog</guid>
-      <link>http://localhost:8080/FsBlog/blog/2013/11-08-hello-fsblog/index.html</link>
-      <pubDate>Fri, 08 Nov 2013 11:27:31 GMT</pubDate>
-      <description>&lt;p&gt;&lt;strong&gt;FsBlog&lt;/strong&gt; hutch_test aims to be a blog-aware static site generator, mostly built in &lt;code&gt;F#&lt;/code&gt; for .NET and Mono developers.&lt;/p&gt;
+      <title>test35</title>
+      <guid>http://www.progletariat.com//blog/2015/08-10-test35</guid>
+      <link>http://www.progletariat.com//blog/2015/08-10-test35/index.html</link>
+      <pubDate>Mon, 10 Aug 2015 07:11:58 GMT</pubDate>
+      <description>
 
+</description>
+    </item>
+    <item>
+      <title>test33</title>
+      <guid>http://www.progletariat.com//blog/2015/08-10-test33</guid>
+      <link>http://www.progletariat.com//blog/2015/08-10-test33/index.html</link>
+      <pubDate>Mon, 10 Aug 2015 07:09:55 GMT</pubDate>
+      <description>
+
+</description>
+    </item>
+    <item>
+      <title>Monads</title>
+      <guid>http://www.progletariat.com//blog/2015/07-28-monads</guid>
+      <link>http://www.progletariat.com//blog/2015/07-28-monads/index.html</link>
+      <pubDate>Tue, 28 Jul 2015 09:12:42 GMT</pubDate>
+      <description>
+
+</description>
+    </item>
+    <item>
+      <title>Applicative</title>
+      <guid>http://www.progletariat.com//blog/2015/07-28-applicative</guid>
+      <link>http://www.progletariat.com//blog/2015/07-28-applicative/index.html</link>
+      <pubDate>Tue, 28 Jul 2015 09:11:43 GMT</pubDate>
+      <description>
 
 </description>
     </item>

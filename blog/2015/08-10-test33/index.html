@@ -1,0 +1,216 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>test33</title>
+  	<link rel="stylesheet" type="text/css" media="screen" href="/fsharp.formatting/tooltips.css" />
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <link rel="shortcut icon" href="/favicon.png">
+  	<script type="text/javascript" src="/fsharp.formatting/tooltips.js"></script>
+  </head>
+  <body>
+	<h1>
+		<div>
+			Pro<i>g</i>letariat
+		</div>
+	</h1>
+	
+
+
+<h2><strong>Literate <em>script</em></strong></h2>
+
+<p>This file demonstrates how to write literate F# script
+files (<code>*.fsx</code>) that can be transformed into nice HTML
+using the <code>literate.fsx</code> script from the <a href="http://tpetricek.github.com/FSharp.Formatting">F# Formatting
+package</a>.</p>
+
+<p>As you can see, a comment starting with double asterisk
+is treated as part of the document and is transformed 
+using Markdown, which means that you can use:</p>
+
+<ul>
+<li>Unordered or ordered lists</li>
+<li>Text formatting including <strong>bold</strong> and <em>emphasis</em></li>
+</ul>
+
+<p>And numerous other <a href="http://daringfireball.net/projects/markdown">Markdown</a> features.</p>
+
+<h3><em>Writing <strong>F#</strong> code</em></h3>
+
+<p>Code that is not inside comment will be formatted as
+a sample snippet (which also means that you can 
+run it in Visual Studio or MonoDevelop).</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="c">/// The Hello World of functional languages!</span>
+<span class="k">let</span> <span class="k">rec</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">factorial</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">x</span> <span class="o">=</span> 
+  <span class="k">if</span> <span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="i">x</span> <span class="o">=</span> <span class="n">0</span> <span class="k">then</span> <span class="n">1</span> 
+  <span class="k">else</span> <span onmouseout="hideTip(event, 'fs2', 4)" onmouseover="showTip(event, 'fs2', 4)" class="i">x</span> <span class="o">*</span> (<span onmouseout="hideTip(event, 'fs1', 5)" onmouseover="showTip(event, 'fs1', 5)" class="i">factorial</span> (<span onmouseout="hideTip(event, 'fs2', 6)" onmouseover="showTip(event, 'fs2', 6)" class="i">x</span> <span class="o">-</span> <span class="n">1</span>))
+
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs3', 7)" onmouseover="showTip(event, 'fs3', 7)" class="i">f10</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs1', 8)" onmouseover="showTip(event, 'fs1', 8)" class="i">factorial</span> <span class="n">10</span></pre>
+</td>
+</tr>
+</table>
+
+<h4><em>Hiding code</em></h4>
+
+<p>If you want to include some code in the source code, 
+but omit it from the output, you can use the <code>hide</code> 
+command.</p>
+
+<p>The value will be defined in the F# code and so you
+can use it from other (visible) code and get correct
+tool tips:</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs5', 10)" onmouseover="showTip(event, 'fs5', 10)" class="i">answer</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 11)" onmouseover="showTip(event, 'fs4', 11)" class="i">hidden</span></pre>
+</td>
+</tr>
+</table>
+
+<h3><em>Moving <strong>code</strong> around</em></h3>
+
+<p>Sometimes, it is useful to first explain some code that
+has to be located at the end of the snippet (perhaps 
+because it uses some definitions discussed in the middle).
+This can be done using <code>include</code> and <code>define</code> commands.</p>
+
+<p>The following snippet gets correct tool tips, even though
+it uses <code>laterFunction</code>:</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs7', 13)" onmouseover="showTip(event, 'fs7', 13)" class="i">sample</span> <span class="o">=</span> 
+  <span onmouseout="hideTip(event, 'fs6', 14)" onmouseover="showTip(event, 'fs6', 14)" class="i">laterFunction</span>()
+  <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs8', 15)" onmouseover="showTip(event, 'fs8', 15)" class="i">printfn</span> <span class="s">&quot;</span><span class="s">Got</span><span class="s">:</span><span class="s"> </span><span class="s">%</span><span class="s">s</span><span class="s">&quot;</span></pre>
+</td>
+</tr>
+</table>
+
+<p>Then we can explain how <code>laterFunction</code> is defined:</p>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs6', 12)" onmouseover="showTip(event, 'fs6', 12)" class="i">laterFunction</span>() <span class="o">=</span> 
+  <span class="s">&quot;</span><span class="s">Not</span><span class="s"> </span><span class="s">very</span><span class="s"> </span><span class="s">difficult</span><span class="s">,</span><span class="s"> </span><span class="s">is</span><span class="s"> </span><span class="s">it</span><span class="s">?</span><span class="s">&quot;</span></pre>
+</td>
+</tr>
+</table>
+
+<p>This example covers pretty much all features that are 
+currently implemented in <code>literate.fsx</code>, but feel free 
+to <a href="https://github.com/tpetricek/FSharp.Formatting">fork the project on GitHub</a> and add more 
+features or report bugs!</p>
+
+<h4><em>Tables</em></h4>
+
+<table>
+<thead>
+<tr class="header">
+<th><p>fruit</p></th>
+<th align="right"><p>price</p></th>
+<th><p>colour</p></th>
+<th align="center"><p>climate</p></th>
+<th><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>apple</p></td>
+<td align="right"><p>2.05</p></td>
+<td><p>green/red</p></td>
+<td align="center"><p>temperate</p></td>
+<td><p>a fairly boring and not very tasty fruit</p></td>
+</tr>
+<tr class="even">
+<td><p>pear</p></td>
+<td align="right"><p>1.37</p></td>
+<td><p>green/brown</p></td>
+<td align="center"><p>temperate</p></td>
+<td><p>good mainly for making cider</p></td>
+</tr>
+<tr class="odd">
+<td><p>orange</p></td>
+<td align="right"><p>3.09</p></td>
+<td><p>orange</p></td>
+<td align="center"><p>tropical</p></td>
+<td><p>very tasty, but blighted by being hard to peel</p></td>
+</tr>
+<tr class="even">
+<td><p>banana</p></td>
+<td align="right"><p>2.42</p></td>
+<td><p>yellow</p></td>
+<td align="center"><p>tropical</p></td>
+<td><p>both tasty and easy to peel</p></td>
+</tr>
+</tbody>
+</table>
+
+
+<h3><em>Block <strong>QUOTES</strong></em></h3>
+
+<blockquote>
+  <p>This is a blockquote
+what happens with it?</p>
+</blockquote>
+
+<div class="tip" id="fs1">val factorial : x:int -&gt; int<br /><br />Full name: 08-10-test33_.factorial<br /><em><br /><br />&#160;The Hello World of functional languages!</em></div>
+<div class="tip" id="fs2">val x : int</div>
+<div class="tip" id="fs3">val f10 : int<br /><br />Full name: 08-10-test33_.f10</div>
+<div class="tip" id="fs4">val hidden : int<br /><br />Full name: 08-10-test33_.hidden<br /><em><br /><br />&#160;This is a hidden answer</em></div>
+<div class="tip" id="fs5">val answer : int<br /><br />Full name: 08-10-test33_.answer</div>
+<div class="tip" id="fs6">val laterFunction : unit -&gt; string<br /><br />Full name: 08-10-test33_.laterFunction</div>
+<div class="tip" id="fs7">val sample : unit<br /><br />Full name: 08-10-test33_.sample</div>
+<div class="tip" id="fs8">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
+
+
+<h3 class="blueViolet">
+	<em> Comments </em>
+</h3>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+	/* * * CONFIGURATION VARIABLES * * */
+	var disqus_shortname = 'progletariat';
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>	
+
+	<footer>
+	    <div>
+			Text: &copy; Andy Hutchinson 2015
+		</div>
+    </footer>
+    <script src="/javascripts/scale.fix.js"></script>
+  </body>
+</html>
