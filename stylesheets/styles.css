@@ -1,3 +1,15 @@
+/**
+* Progletariat.com Blog CSS
+*
+* Copyright Andy Hutchinson 2015
+*
+* You are welcome to lift the layout, but please change the 
+* colours and fonts to make it a bit different.
+*
+* This CSS is a bit strange as it needs to be compatible with
+* the output of a markdown -> html processor.
+*/
+
 @import url(http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic|Open+Sans:400,800);
 
 html {
@@ -46,11 +58,6 @@ h2 strong {
 	font-size: 64px;
 	font-weight: 800;
 	font-style: normal;
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 2rem;
-	padding-right: 2rem;
 }
 
 h2 strong em {
@@ -84,14 +91,9 @@ h3 em,
 h4 em {
     display: block;
 	font-style: italic;
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 2rem;
-	padding-right: 2rem;	
 }
 
-h3 em  strong,
+h3 em strong,
 h4 em strong {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 36px;
@@ -104,69 +106,93 @@ h5 {
 	font-weight: 800;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 2rem;
-	padding-right: 2rem;
 }
 
-p {
-	column-count: 2;
-	-webkit-column-count: 2;
-	-moz-column-count: 2;
-	column-gap: 3em;
-	-webkit-column-gap: 3em;
-	-moz-column-gap: 3em;
-	column-rule-style: solid;
-	-webkit-column-rule-style: solid;
-	-moz-column-rule-style: solid;
-	column-rule-width: 2px;
-	-webkit-column-rule-width: 2px;
-	-moz-column-rule-width: 2px;
-	column-rule-color: #dedede;
-	-webkit-column-rule-color: #dedede;
-	-moz-column-rule-color: #dedede;
-    max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-table p {
+p.noCols, p.noCol, p.oneCol, table p {
 	column-count: 1;
 	-webkit-column-count: 1;
 	-moz-column-count: 1;
+}
+
+table p {
 	margin: 0;
 	padding: 1em;
 }
 
-div {
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 2rem;
-	padding-right: 2rem;
+
+div.flex {
+    display: flex;
+    flex-wrap: wrap;	
+    align-items: stretch;
 }
 
-code, pre {
-  font-family: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', 'Droid Sans Mono', Terminal, 'Lucida Grande', monospace;  
-  font-size: 0.9em;
+code, pre.fssnip, pre.highlighted {
+  font-family: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', 'Droid Sans Mono', Terminal, 'Lucida Grande', monospace; 
+  font-size: 15px;  
   padding:2px 3px;
   color:#d14;
-  background-color:#f7f7f9;
-  border:1px solid #e1e1e8;
+  background-color: transparent;
   -webkit-border-radius:3px;
   -moz-border-radius:3px;
   border-radius:3px;
+  column-count: 1;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
 }
 
-table,
-table.pre {
+code.hljs {
+  background-color: transparent;
+}
+
+table {
 	width: 100%;
-	max-width: 1200px;
-	margin: 1.75rem auto 1.75rem auto;
+	padding-left: 0em !important;
+    padding-right: 0em !important;
+}
+
+table.pre {
+	width: auto;
+    background-repeat: no-repeat;
+    background-position: right 5px top 5px; 
+    background-size: 48px 48px;
+	background-color: #212d30;
+	margin: 0rem auto 0.5rem auto !important;
+	padding-left: 0.75em !important;
+    padding-right: 0.75em !important;
+}
+
+table.pre caption {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;	
+	font-size: 15px;
+	background-color: white;
+	color: rgb(10, 29, 45);
+	border-radius: 7px;
+	float: left;
+	text-align: center;
+	padding-left: 0.5rem;
+	padding-right: 0.25rem;
+	padding-bottom: 0.15rem;
+}
+
+table.fsharp {
+  background-image: url("/images/fsharpLogo.png");
+}
+
+table.clojure {
+  background-image: url("/images/clojureLogo.png");
+}
+
+table.haskell {
+  background-image: url("/images/haskellLogo.svg");
+}
+
+table.scala {
+  background-image: url("/images/scalaLogo.png");
+}
+
+td.lines {
+    display: none;	
 }
 
 th {
@@ -189,12 +215,12 @@ td:nth-child(1) {
 	color: rgb(10, 29, 45);
 }
 
+table.pre td {
+    background-color: inherit;	
+}
+
 ul {
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 10rem;
-	padding-right: 2rem;
+	padding-left: 10rem !important;
 }
 
 blockquote {
@@ -280,3 +306,48 @@ a:visited {
 .headingBlue {
 	background-color: rgb(10, 29, 45);
 }
+
+
+@media screen and (min-width: 1100px) {
+  p {
+	column-count: 2;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-gap: 3em;
+	-webkit-column-gap: 3em;
+	-moz-column-gap: 3em;
+	column-rule-style: solid;
+	-webkit-column-rule-style: solid;
+	-moz-column-rule-style: solid;
+	column-rule-width: 2px;
+	-webkit-column-rule-width: 2px;
+	-moz-column-rule-width: 2px;
+	column-rule-color: #dedede;
+	-webkit-column-rule-color: #dedede;
+	-moz-column-rule-color: #dedede;
+  }
+}
+
+h2 strong, h3 em, h4 em, h5, p, div, table, table.pre ul {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media screen and (min-width: 1850px) {
+  h2 strong, h3 em, h4 em, h5, p, div, table, table.pre, ul { max-width: 1600px; }
+}	
+
+@media screen and (min-width: 2350px) {
+  h2 strong, h3 em, h4 em, h5, p, div, table, table.pre, ul { max-width: 2100px; }
+}	
+
+@media screen and (min-width: 2850px) {
+  h2 strong, h3 em, h4 em, h5, p, div, table, table.pre, ul { max-width: 2600px; }
+}	
+
+@media screen and (min-width: 3350px) {
+  h2 strong, h3 em, h4 em, h5, p, div, table, table.pre, ul { max-width: 3100px; }
+}	

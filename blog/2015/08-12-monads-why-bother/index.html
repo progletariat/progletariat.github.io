@@ -5,10 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Monads >>= Why Bother?</title>
   	<link rel="stylesheet" type="text/css" media="screen" href="/fsharp.formatting/tooltips.css" />
+	<link rel="stylesheet" href="/stylesheets/highlightStyles/default.css">
+	<link rel="stylesheet" href="/stylesheets/highlightStyles/monokai-sublime.css">
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
     <link rel="shortcut icon" href="/favicon.png">
   	<script type="text/javascript" src="/fsharp.formatting/tooltips.js"></script>
+    <script src="/javascripts/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body>
 	<h1>
@@ -19,28 +23,21 @@
 	
 
 
-<h2><strong> MONADS <em>>>= Why Bother?</em> </strong></h2>
-
+<h2><strong> MONADS <em>&gt;&gt;= Why Bother?</em> </strong></h2>
 <h5>This is totally unfinished</h5>
-
 <p>If you stumble across it, please ignore, for now...</p>
-
 <p>In the church of functional programming, monads are glorified with a
 mystique that both intrigues and alarms the novice. Bedecked with
-a fancy operator (>>=) and a dedicated syntax (do-blocks or
+a fancy operator (&gt;&gt;=) and a dedicated syntax (do-blocks or
 computational expressions), they loom over 'ordinary' code with a
 certain holier-than-though smugness. So, are they deserving of their
 place on a pedestal? Let's try to see through the fervour, recognise
 them for what the really are, and put them at our own disposal.</p>
-
 <h3><em>A gift from the functional high ground <strong>OR</strong> Psuedo-mathematical over-complication?</em></h3>
-
 <h5>Heaven and Hell</h5>
-
 <p>Monads help bridge the gap between the utopia that we would like to code in
 (heaven) and the depressingly complicated reality that we unfortunately have
 to deal with (hell). Here are some examples of this duality:</p>
-
 <table>
 <thead>
 <tr class="header">
@@ -63,18 +60,14 @@ to deal with (hell). Here are some examples of this duality:</p>
 </tbody>
 </table>
 
-
 <p>How Monads bridge the gap between heaven and hell is by using types.</p>
-
 <p>The Monadic Type is the Hell Type. In other, more positive tutorials,
 the Monadic Type will be given a nicer name, like Amplified Type or
 or Wrapper Type or Elevated Type, ...
 But that is dogma. The Monadic Type is dirty and unclean, Monads primary
 benefit is to prevent you from having to get your hands dirty in the
 grubby, depressing Hell of the Monadic Type.</p>
-
 <h4><em>Which type of <strong>HELL</strong> would you like?</em></h4>
-
 <table>
 <thead>
 <tr class="header">
@@ -92,11 +85,8 @@ grubby, depressing Hell of the Monadic Type.</p>
 </tbody>
 </table>
 
-
-<p>Non-relationship of >> to >>=</p>
-
+<p>Non-relationship of &gt;&gt; to &gt;&gt;=</p>
 <p>Enlightenment. Transcendental</p>
-
 <p>This is only one view of Monads. Original source (mathematical, haskall, didn't understand all the maths or all the haskall)
 Other links.</p>
 
@@ -126,5 +116,30 @@ Other links.</p>
 		</div>
     </footer>
     <script src="/javascripts/scale.fix.js"></script>
+  
+    <script>
+	
+		function addCaption(ele) {
+		
+			var table = ele.parentElement.parentElement.parentElement.parentElement.parentElement;
+			var caption = document.createElement("caption");
+			var codeClass = ele.className.replace('hljs', '');
+			
+			caption.innerHTML = codeClass;
+			table.insertBefore(caption, table.firstChild);
+			table.className += ' ' + codeClass;
+		}
+	
+		var codeBlocks = document.getElementsByTagName('code');
+
+		for (var i = 0; i < codeBlocks.length; i++) {
+			codeBlocks[i].className = codeBlocks[i].getAttribute('lang');
+			hljs.highlightBlock(codeBlocks[i]);
+			addCaption(codeBlocks[i]);
+		}
+
+		
+
+	</script>  
   </body>
 </html>
