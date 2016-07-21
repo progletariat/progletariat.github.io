@@ -5,6 +5,33 @@
     <description>Progletariat /ˌproʊglɪˈtɛəriːət/: A term used to describe the class of wage-earners (especially programmers) in a capitalist society whose only possession of any perceived value is their labour-power (their ability to code).
 </description>
     <item>
+      <title>multi-functional-logical</title>
+      <guid>http://www.progletariat.com//blog/2016/07-18-multi-functional-logical</guid>
+      <link>http://www.progletariat.com//blog/2016/07-18-multi-functional-logical/index.html</link>
+      <pubDate>Mon, 18 Jul 2016 07:38:02 GMT</pubDate>
+      <description>
+
+</description>
+    </item>
+    <item>
+      <title>multi-functional-maps</title>
+      <guid>http://www.progletariat.com//blog/2016/07-19-multi-functional-maps</guid>
+      <link>http://www.progletariat.com//blog/2016/07-19-multi-functional-maps/index.html</link>
+      <pubDate>Sat, 16 Jul 2016 07:38:02 GMT</pubDate>
+      <description>
+
+</description>
+    </item>
+    <item>
+      <title>multi-functional-strings</title>
+      <guid>http://www.progletariat.com//blog/2016/07-19-multi-functional-strings</guid>
+      <link>http://www.progletariat.com//blog/2016/07-19-multi-functional-strings/index.html</link>
+      <pubDate>Thu, 14 Jul 2016 07:38:02 GMT</pubDate>
+      <description>
+
+</description>
+    </item>
+    <item>
       <title>multi-functional-lists</title>
       <guid>http://www.progletariat.com//blog/2016/07-01-multi-functional-lists</guid>
       <link>http://www.progletariat.com//blog/2016/07-01-multi-functional-lists/index.html</link>
@@ -19,26 +46,6 @@
       <link>http://www.progletariat.com//blog/2015/08-12-monads-why-bother/index.html</link>
       <pubDate>Wed, 12 Aug 2015 08:08:30 GMT</pubDate>
       <description>
-
-</description>
-    </item>
-    <item>
-      <title>Getting Started</title>
-      <guid>http://www.progletariat.com//blog/2013/11-09-getting-started</guid>
-      <link>http://www.progletariat.com//blog/2013/11-09-getting-started/index.html</link>
-      <pubDate>Sat, 09 Nov 2013 12:38:14 GMT</pubDate>
-      <description>&lt;p&gt;If you've much experience with other static site generators like &lt;em&gt;Octopress&lt;/em&gt; or &lt;em&gt;Jekyll&lt;/em&gt; most of this should be fairly familiar, if not, hopefully it won't be too difficult to pick up.&lt;/p&gt;
-
-
-</description>
-    </item>
-    <item>
-      <title>Hello, FsBlog!</title>
-      <guid>http://www.progletariat.com//blog/2013/11-08-hello-fsblog</guid>
-      <link>http://www.progletariat.com//blog/2013/11-08-hello-fsblog/index.html</link>
-      <pubDate>Fri, 08 Nov 2013 11:27:31 GMT</pubDate>
-      <description>&lt;p&gt;&lt;strong&gt;FsBlog&lt;/strong&gt; aims to be a blog-aware static site generator, mostly built in &lt;code&gt;F#&lt;/code&gt; for .NET and Mono developers.&lt;/p&gt;
-
 
 </description>
     </item>

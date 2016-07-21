@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>multi-functional-lists</title>
+	<title>multi-functional-logical</title>
   	<link rel="stylesheet" type="text/css" media="screen" href="/fsharp.formatting/tooltips.css" />
 	<link rel="stylesheet" href="/stylesheets/highlightStyles/default.css">
 	<link rel="stylesheet" href="/stylesheets/highlightStyles/monokai-sublime.css">
@@ -23,15 +23,22 @@
 	
 
 
-<h2><strong> <em>multifunctional:</em> LISTS </strong></h2>
-<h5>Creating Lists</h5>
-<p class="noCols">
-Here's some introduction. Here's a longer list of stuff it goes on and on for a while...
-</p>
+<h2><strong> <em>multifunctional:</em> LOGICAL OPERATORS </strong></h2>
+<h5>And / Or / Not</h5>
 <div class="flex">
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="haskell">                  
+<td class="snippet"><pre class="fssnip highlighted"><code lang="haskell">                 
+True <span class="prep">&amp;&amp;</span> False  
+True <span class="prep">||</span> False   
+not False    
+not (True <span class="prep">&amp;&amp;</span> False)  
+                   
 </code></pre></td></tr></table>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"></pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"></code></pre></td>
@@ -46,7 +53,7 @@ Here's some introduction. Here's a longer list of stuff it goes on and on for a 
 <td class="snippet"><pre class="fssnip"><code lang="clojure">
 </code></pre></td></tr></table>
 </div>
-<h3><em>Some aspect <strong>of</strong> lists</em></h3>
+<h3><em>Some aspect <strong>of</strong> logic</em></h3>
 <h5>Stuff</h5>
 <div class="flex">
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
@@ -66,27 +73,8 @@ Here's some introduction. Here's a longer list of stuff it goes on and on for a 
 <td class="snippet"><pre class="fssnip"><code lang="clojure">
 </code></pre></td></tr></table>
 </div>
-<h4><em>Some other aspect <strong>of</strong> lists</em></h4>
+<h4><em>Some other aspect <strong>of</strong> logic</em></h4>
 <h5>More Stuff</h5>
-<div class="flex">
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="haskell">                                   
-</code></pre></td></tr></table>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"></pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"></code></pre></td>
-</tr>
-</table>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip"><code lang="scala">
-</code></pre></td></tr></table>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip"><code lang="clojure">
-</code></pre></td></tr></table>
-</div>
-<h5>Yet More Stuff</h5>
 <div class="flex">
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
