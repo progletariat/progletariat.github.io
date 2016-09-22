@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>multi-functional-logical</title>
+	<title>multi-functional-logical-operators</title>
   	<link rel="stylesheet" type="text/css" media="screen" href="/fsharp.formatting/tooltips.css" />
 	<link rel="stylesheet" href="/stylesheets/highlightStyles/default.css">
 	<link rel="stylesheet" href="/stylesheets/highlightStyles/monokai-sublime.css">
@@ -17,7 +17,7 @@
   <body>
 	<h1>
 		<div>
-			Pro<i>g</i>letariat
+			<a href="/index.html">Pro<i>g</i>letariat</a>
 		</div>
 	</h1>
 	
@@ -30,15 +30,13 @@
 <span class="l">2: </span>
 <span class="l">3: </span>
 <span class="l">4: </span>
-<span class="l">5: </span>
-<span class="l">6: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="haskell">                 
-True <span class="prep">&amp;&amp;</span> False  
-True <span class="prep">||</span> False   
-not False    
-not (True <span class="prep">&amp;&amp;</span> False)  
-                   
+<td class="snippet"><pre class="fssnip highlighted"><code lang="haskell">
+True <span class="prep">&amp;&amp;</span> False
+True <span class="prep">||</span> False
+not False
+not (True <span class="prep">&amp;&amp;</span> False)
+
 </code></pre></td></tr></table>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"></pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"></code></pre></td>
@@ -58,7 +56,7 @@ not (True <span class="prep">&amp;&amp;</span> False)
 <div class="flex">
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="haskell">                                   
+<td class="snippet"><pre class="fssnip highlighted"><code lang="haskell">
 </code></pre></td></tr></table>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"></pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"></code></pre></td>
@@ -78,7 +76,7 @@ not (True <span class="prep">&amp;&amp;</span> False)
 <div class="flex">
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="haskell">                                   
+<td class="snippet"><pre class="fssnip highlighted"><code lang="haskell">
 </code></pre></td></tr></table>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"></pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"></code></pre></td>
@@ -120,20 +118,20 @@ not (True <span class="prep">&amp;&amp;</span> False)
 		</div>
     </footer>
     <script src="/javascripts/scale.fix.js"></script>
-  
+
     <script>
-	
+
 		function addCaption(ele) {
-		
+
 			var table = ele.parentElement.parentElement.parentElement.parentElement.parentElement;
 			var caption = document.createElement("caption");
 			var codeClass = ele.className.replace('hljs', '');
-			
+
 			caption.innerHTML = codeClass;
 			table.insertBefore(caption, table.firstChild);
 			table.className += ' ' + codeClass;
 		}
-	
+
 		var codeBlocks = document.getElementsByTagName('code');
 
 		for (var i = 0; i < codeBlocks.length; i++) {
@@ -142,8 +140,8 @@ not (True <span class="prep">&amp;&amp;</span> False)
 			addCaption(codeBlocks[i]);
 		}
 
-		
 
-	</script>  
+
+	</script>
   </body>
 </html>
