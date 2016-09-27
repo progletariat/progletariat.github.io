@@ -1,9 +1,13 @@
+﻿@using System.Linq
+@helper PostDate(DateTime rawDate) {
+    <time datetime="@rawDate.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss")" pubdate data-updated="true">@rawDate.ToString("MMM d, yyyy")</time>
+}
 
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Progletariat</title>
+	<title>@Title</title>
   	<link rel="stylesheet" type="text/css" media="screen" href="/fsharp.formatting/tooltips.css" />
 	<link rel="stylesheet" href="/stylesheets/highlightStyles/default.css">
 	<link rel="stylesheet" href="/stylesheets/highlightStyles/monokai-sublime.css">
@@ -20,44 +24,7 @@
 			<a href="/index.html">Pro<i>g</i>letariat</a>
 		</div>
 	</h1>
-	
-
-
-<h2>
-
-    <div class="definitionTerm">
-		/ˌprəʊglɪˈtɛəriːət/ n.
-	</div>
-    <div class="definition">
-	    <span class="definitionNumber">1.</span>
-		A term used to describe the class of wage-earners in a capitalist society whose only skill
-		of any perceived value is their ability to create computer software.
-	</div>
-
-</h2>
-
-<p>
-    <!--
-    Use dave^2 image convertion to svg.
-	Link to blog source.
-    -->
-</p>
-
-<h3>
-	<em>Posts</em>
-</h3>
-
-<ul>
-
-		<li><a href="blog/2016/09-20-emacs-keys/index.html">emacs keys - </a></li>
-
-</ul>
-
-<p>
-	There's not much here yet.
-</p>
-
-
+	@RenderBody()
 	<footer>
 	    <div>
 			Text: &copy; Andy H 2016

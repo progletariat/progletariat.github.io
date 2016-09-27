@@ -17,67 +17,38 @@
   <body>
 	<h1>
 		<div>
-			<a href="/index.html">Pro<i>g</i>letariat</a>
+			Pro<i>g</i>letariat
 		</div>
 	</h1>
 	
 
 
-<h2>
-
-    <div class="definitionTerm">
-		/ˌprəʊglɪˈtɛəriːət/ n.
-	</div>
-    <div class="definition">
-	    <span class="definitionNumber">1.</span>
-		A term used to describe the class of wage-earners in a capitalist society whose only skill
-		of any perceived value is their ability to create computer software.
-	</div>
-
-</h2>
-
-<p>
-    <!--
-    Use dave^2 image convertion to svg.
-	Link to blog source.
-    -->
-</p>
-
-<h3>
-	<em>Posts</em>
-</h3>
-
 <ul>
 
-		<li><a href="blog/2016/09-20-emacs-keys/index.html">emacs keys - </a></li>
+    <li><a href="blog/2013/11-09-getting-started/index.html">Getting Started</a></li>
+    <li><a href="blog/2013/11-08-hello-fsblog/index.html">Hello, FsBlog!</a></li>
 
 </ul>
-
-<p>
-	There's not much here yet.
-</p>
-
-
 	<footer>
 	    <div>
-			Text: &copy; Andy H 2016
+			Text: &copy; Andy Hutchinson 2015
 		</div>
     </footer>
     <script src="/javascripts/scale.fix.js"></script>
-
+  
     <script>
-
+	
 		function addCaption(ele) {
-
+		
 			var table = ele.parentElement.parentElement.parentElement.parentElement.parentElement;
 			var caption = document.createElement("caption");
 			var codeClass = ele.className.replace('hljs', '');
-
+			
 			caption.innerHTML = codeClass;
 			table.insertBefore(caption, table.firstChild);
 			table.className += ' ' + codeClass;
 		}
-
+	
 		var codeBlocks = document.getElementsByTagName('code');
 
 		for (var i = 0; i < codeBlocks.length; i++) {
@@ -86,8 +57,8 @@
 			addCaption(codeBlocks[i]);
 		}
 
+		
 
-
-	</script>
+	</script>  
   </body>
 </html>
