@@ -178,7 +178,7 @@
 <td><p>M-g g</p></td>
 <td><p>Go to line</p></td>
 <td><p>C-c C-d C-a</p></td>
-<td><p>Free text search of documentation</p></td>
+<td><p>Free text doc search</p></td>
 </tr>
 <tr class="even">
 <td></td>
@@ -220,8 +220,8 @@
 <td><p>Cut word</p></td>
 </tr>
 <tr class="even">
-<td><p>M-x <str></p></td>
-<td><p>Replace string</p></td>
+<td><p>C-u n <cmd></p></td>
+<td><p>Repeat command n times</p></td>
 <td><p>C-y</p></td>
 <td><p>Yank from kill ring (paste)</p></td>
 </tr>
@@ -229,7 +229,7 @@
 <td><p>M-/</p></td>
 <td><p>Expand</p></td>
 <td><p>M-y</p></td>
-<td></td>
+<td><p>Kill selected text and replace it with last killed item</p></td>
 </tr>
 <tr class="even">
 <td><p>M-\</p></td>
@@ -252,6 +252,82 @@
 </thead>
 <tbody>
 <tr class="odd">
+<td><p>M-x package-refresh-contents</p></td>
+<td><p>Refresh list of known packages</p></td>
+<td><p>M-x clojure-mode</p></td>
+<td><p>Enter clojure mode</p></td>
+</tr>
+<tr class="even">
+<td><p>M-x package-list-packages</p></td>
+<td><p>List packages</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>M-x package-install <name></p></td>
+<td><p>Install package</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h3><em>Cider <strong>REPL</strong></em></h3>
+<table>
+<thead>
+<tr class="header">
+<th><p>Keys</p></th>
+<th><p>Command</p></th>
+<th><p>Keys</p></th>
+<th><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>M-x cider-jack-in</p></td>
+<td><p>Start CIDER clojure REPL</p></td>
+<td><p>C-Enter</p></td>
+<td><p>Evaluate</p></td>
+</tr>
+<tr class="even">
+<td><p>C-x C-e</p></td>
+<td><p>Eval expression to left of cursor</p></td>
+<td><p>C-u C-x C-e</p></td>
+<td><p>Print to right of cursor, result of expr to left of cursor</p></td>
+</tr>
+<tr class="odd">
+<td><p>C-x C-k</p></td>
+<td><p>Compile buffer into REPL</p></td>
+<td><p>a</p></td>
+<td><p>In stack trace - expand / collapse details</p></td>
+</tr>
+<tr class="even">
+<td><p>M-, / M-.</p></td>
+<td><p>Navigate to source / back from source</p></td>
+<td><p>C-c M-n</p></td>
+<td><p>Set REPL namespace to match current file</p></td>
+</tr>
+<tr class="odd">
+<td><p>C-upArrow</p></td>
+<td><p>Command history - back</p></td>
+<td><p>C-downArrow</p></td>
+<td><p>Command history - forwards</p></td>
+</tr>
+</tbody>
+</table>
+
+<h4><em>Paredit <strong>mode</strong></em></h4>
+<table>
+<thead>
+<tr class="header">
+<th><p>Keys</p></th>
+<th><p>Command</p></th>
+<th><p>Keys</p></th>
+<th><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>
@@ -269,11 +345,27 @@
 <td></td>
 <td></td>
 </tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
-<h5>Further Info</h5>
-<p><a href="/index.html">test link</a>. <a href="/index2.html">test link not visited</a></p>
 
 
 
