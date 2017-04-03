@@ -101,7 +101,7 @@ the drawing elements from the logical and process views.</p>
 <p>Here's the original 1995 paper about <a href="http://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf">4+1</a></p>
 <h4><em>UML</em></h4>
 <p>Weighing in with a heavy set of diagrams for the up-front design of large software systems, OMG's <strong>Unified Modeling Language</strong>
-blows our minds with 15 different ways of scrawling pictures about software. Actually, rather than scrawling, they would
+blows our minds with 14 different ways of scrawling pictures about software. Actually, rather than scrawling, they would
 encourage you to use a (<em>probably expensive</em>) tool to make everything neat and tidy. Confusion abounds with new diagram
 types being added between UML v1 and v2.0 (in 2005), and existing ones renamed. Surely starting to prioritise standardisation
 over actual comprehensibility, here's the full list anyway:</p>
@@ -122,8 +122,8 @@ over actual comprehensibility, here's the full list anyway:</p>
 <tbody>
 <tr class="odd">
 <td><p><strong>Depicts:</strong></p></td>
-<td></td>
-<td></td>
+<td><p>Object Oriented Structure</p></td>
+<td><p>Usage of Instances of Classes</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -132,8 +132,8 @@ over actual comprehensibility, here's the full list anyway:</p>
 </tr>
 <tr class="even">
 <td><p><strong>Concerns:</strong></p></td>
-<td></td>
-<td></td>
+<td><p>Domain Models, Module Structures</p></td>
+<td><p>How to Cater for a particular Task / Function / Scenario</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -142,8 +142,8 @@ over actual comprehensibility, here's the full list anyway:</p>
 </tr>
 <tr class="odd">
 <td><p><strong>Components:</strong></p></td>
-<td></td>
-<td></td>
+<td><p>Classes, Interfaces, Enums</p></td>
+<td><p>Instances of Classes / Enums</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -152,8 +152,8 @@ over actual comprehensibility, here's the full list anyway:</p>
 </tr>
 <tr class="even">
 <td><p><strong>Connectors:</strong></p></td>
-<td></td>
-<td></td>
+<td><p>Association, Aggregation, Composition, Generalization, Implementation, Usage</p></td>
+<td><p>References (Links / Pointers), maybe with Counts and Ordering</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -162,8 +162,8 @@ over actual comprehensibility, here's the full list anyway:</p>
 </tr>
 <tr class="odd">
 <td><p><strong>Containers:</strong></p></td>
-<td></td>
-<td></td>
+<td><p>Components can contain Attributes and Methods</p></td>
+<td><p>Instances can be shown containing particular Attribute Values</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -223,7 +223,6 @@ over actual comprehensibility, here's the full list anyway:</p>
 <thead>
 <tr class="header">
 <th><p><em>Diagram:</em></p></th>
-<th><p>Behaviour Diagram</p></th>
 <th><p>Communication Diagram+</p></th>
 <th><p>Interaction Overview Diagram+</p></th>
 <th><p>Sequence Diagram</p></th>
@@ -237,11 +236,9 @@ over actual comprehensibility, here's the full list anyway:</p>
 <td></td>
 <td></td>
 <td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td><p><strong>Concerns:</strong></p></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -253,11 +250,9 @@ over actual comprehensibility, here's the full list anyway:</p>
 <td></td>
 <td></td>
 <td></td>
-<td></td>
 </tr>
 <tr class="even">
 <td><p><strong>Connectors:</strong></p></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -269,13 +264,12 @@ over actual comprehensibility, here's the full list anyway:</p>
 <td></td>
 <td></td>
 <td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
 
 <p><a href="http://www.uml.org">UML</a> is <em>looked after</em> by <a href="http://www.omg.org"><strong>OMG</strong></a>. <strong>OMG</strong> stands for <em>Object Management Group</em>
-a.k.a. <strong>OMFG</strong> i.e. <em>Oh My <strong><em></em></strong>* God</em>. <strong>Looked after</strong> means <em>Allowed to grow hideously out of control</em>.</p>
+(a.k.a. <strong>OMFG</strong>). <strong>Looked after</strong> means <em>Allowed to grow hideously out of control</em>.</p>
 
 
 
