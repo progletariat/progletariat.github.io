@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Architectural Views and Diagrams</title>
   	<link rel="stylesheet" type="text/css" media="screen" href="/fsharp.formatting/tooltips.css" />
 	<link rel="stylesheet" href="/stylesheets/highlightStyles/default.css">
@@ -112,8 +113,8 @@ over actual comprehensibility, here's the full list anyway:</p>
 <th><p><em>Diagram:</em></p></th>
 <th><p>Class Diagram</p></th>
 <th><p>Object Diagram</p></th>
-<th><p>Component Diagram</p></th>
 <th><p>Package Diagram</p></th>
+<th><p>Component Diagram</p></th>
 <th><p>Composite Structure Diagram+</p></th>
 <th><p>Deployment Diagram</p></th>
 <th><p>Profile Diagram+</p></th>
@@ -124,7 +125,7 @@ over actual comprehensibility, here's the full list anyway:</p>
 <td><p><strong>Depicts:</strong></p></td>
 <td><p>Object Oriented Structure</p></td>
 <td><p>Usage of Instances of Classes</p></td>
-<td></td>
+<td><p>Splitting of Application into Packages</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -134,7 +135,7 @@ over actual comprehensibility, here's the full list anyway:</p>
 <td><p><strong>Concerns:</strong></p></td>
 <td><p>Domain Models, Module Structures</p></td>
 <td><p>How to Cater for a particular Task / Function / Scenario</p></td>
-<td></td>
+<td><p>Namespacing, Dependencies, Packages for each App Tier</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -144,7 +145,7 @@ over actual comprehensibility, here's the full list anyway:</p>
 <td><p><strong>Components:</strong></p></td>
 <td><p>Classes, Interfaces, Enums</p></td>
 <td><p>Instances of Classes / Enums</p></td>
-<td></td>
+<td><p>Packages  or (at higher level) Application Tiers</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -154,7 +155,7 @@ over actual comprehensibility, here's the full list anyway:</p>
 <td><p><strong>Connectors:</strong></p></td>
 <td><p>Association, Aggregation, Composition, Generalization, Implementation, Usage</p></td>
 <td><p>References (Links / Pointers), maybe with Counts and Ordering</p></td>
-<td></td>
+<td><p>Import, Use, Tempated By (a Package can be a template for similar Pkgs)</p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -164,7 +165,7 @@ over actual comprehensibility, here's the full list anyway:</p>
 <td><p><strong>Containers:</strong></p></td>
 <td><p>Components can contain Attributes and Methods</p></td>
 <td><p>Instances can be shown containing particular Attribute Values</p></td>
-<td></td>
+<td><p>Packages contain Classes, Events, Types, Other Packages</p></td>
 <td></td>
 <td></td>
 <td></td>
