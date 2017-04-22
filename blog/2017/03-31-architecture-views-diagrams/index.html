@@ -227,31 +227,31 @@ over actual comprehensibility, here's the full list anyway:</p>
 <tr class="odd">
 <td><p><strong>Depicts:</strong></p></td>
 <td><p>Paths between various activities within a functional area</p></td>
-<td></td>
+<td><p>Internal States of a Component</p></td>
 <td><p>Expected usages of the system</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Concerns:</strong></p></td>
 <td><p>Control, Data and Decision Flow between activities</p></td>
-<td></td>
+<td><p>Mapping Behaviour to States and Transitions</p></td>
 <td><p>Requirements and Functionality</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Components:</strong></p></td>
 <td><p>Activity Nodes - may be User Activities or System Object Activities</p></td>
-<td></td>
+<td><p>States, Choices, Forks, Joins</p></td>
 <td><p>Use Cases, Actors, External Systems / Services</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Connectors:</strong></p></td>
 <td><p>Arrows denote Flows of information and choices between activities</p></td>
-<td></td>
+<td><p>Transitions (Events and Actions)</p></td>
 <td><p>Usages (association), Includes, Extends</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Containers:</strong></p></td>
 <td><p>Partitions (similar to swim lanes) correspond to Actors and contain Activities that the Actor performs</p></td>
-<td></td>
+<td><p>Composite States contain other state machines. Regions contain states.</p></td>
 <td><p>Systems / Sub-systems contain Use Cases</p></td>
 </tr>
 </tbody>
@@ -262,53 +262,53 @@ over actual comprehensibility, here's the full list anyway:</p>
 <thead>
 <tr class="header">
 <th><p><em>Diagram:</em></p></th>
-<th><p>Communication Diagram+</p></th>
 <th><p>Interaction Overview Diagram+</p></th>
 <th><p>Sequence Diagram</p></th>
+<th><p>Communication (Collaboration) Diagram+</p></th>
 <th><p>Timing Diagram</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p><strong>Depicts:</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>Summary of high-level control flow within a system / activity</p></td>
+<td><p>Ordering of Communications between Components</p></td>
+<td><p>Communications between Components with more Relaxed Sequencing requirements</p></td>
+<td><p>Time taken for Components to Perform Tasks and Subtasks</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Concerns:</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>Control-flow overview. Higher-level version of activity diagram</p></td>
+<td><p>Exact Sequencing of Messages between Components</p></td>
+<td><p>Message Passing where the Order of Requests is important but Replies are implicitly Synchronous or Unimportant</p></td>
+<td><p>Strict elapsed-time requirements</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Components:</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>Initial node, Final node, Interaction References, Decision Nodes</p></td>
+<td><p>Lifelines of Components / Objects / Services / Actors. Execution Blocks</p></td>
+<td><p>Actors / Objects / Components / Services (called lifelines but drawn as boxes / circles)</p></td>
+<td><p>Lifelines of components (as swimlanes, containing Sub-components)</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Connectors:</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>Flow of control (calls, invocations) - sometimes with guards</p></td>
+<td><p>Sync Call / Async Call, Returns, Callbacks, Events, Object Creation / Destruction</p></td>
+<td><p>Messages / Calls / Events with Sequence Numbers (e.g. 1, 2a, 2b, 2c, 3...)</p></td>
+<td><p>Sync call  / Async call, Events, Callbacks, Returns</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Containers:</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>Interaction References are boxes which refer to other Interaction Diagrams</p></td>
+<td><p>Can contain summary blocks that reference another Interaction Diagram</p></td>
+<td><p>Can use boxes to refer to another Interaction Diagram</p></td>
+<td><p>Each swimlane contains several tracks for sub-components, the lifelines 'step' up and down between tracks in their swimlane</p></td>
 </tr>
 </tbody>
 </table>
 
-<p><a href="http://www.uml.org">UML</a> is <em>looked after</em> by <a href="http://www.omg.org"><strong>OMG</strong></a>. <strong>OMG</strong> stands for <em>Object Management Group</em>
-(a.k.a. <strong>OMFG</strong>). <strong>Looked after</strong> means <em>Allowed to grow with seemingly no limits</em>.</p>
+<p><a href="http://www.uml.org">UML</a> is <em>looked after</em> by <a href="http://www.omg.org"><strong>OMG</strong></a>. <strong>OMG</strong> stands for <em>Object Management Group</em>.
+<strong>Looked after</strong> means <em>Allowed to grow with seemingly no limits</em>.</p>
 
 
 
