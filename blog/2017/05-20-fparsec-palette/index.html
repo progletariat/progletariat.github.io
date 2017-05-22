@@ -116,6 +116,58 @@ function names in your head, so here's an attempt to provide a single page cheat
 </ul>
 </blockquote>
 <hr />
+<blockquote>
+<h2>Chaining Parsers</h2>
+<ul>
+<li>preturn x</li>
+<li>p &gt;&gt;% x</li>
+<li>p |&gt;&gt; f</li>
+<li>p &gt;&gt;= f</li>
+<li>pl &gt;&gt;. pr (take right)</li>
+<li>pl .&gt;&gt; pr (take left)</li>
+<li>pl .&gt;&gt;. pr (take both)</li>
+<li>between pLeft pRight p</li>
+<li>tuple2/3/4/5 p1 p2 ...</li>
+<li>pipe2/3/4/5 p1 p2 ... f</li>
+</ul>
+</blockquote>
+<hr />
+<blockquote>
+<h2>Sequence Parsers</h2>
+<ul>
+<li>parray n p</li>
+<li>skipArray n p</li>
+<li>many[1] p {+skip}</li>
+<li>sepBy[1] p pSep {+skip}</li>
+<li>sepEndBy[1] p pSep {+skip}</li>
+<li>many[1]Till p pEnd {+skip}</li>
+<li>chainl[1] p pSepOp</li>
+<li>chainr[1] p pSepOp</li>
+</ul>
+</blockquote>
+<hr />
+<blockquote>
+<h2>Optional Parsers</h2>
+<ul>
+<li>p1 <|> p2</li>
+<li>choice seqOfParsers</li>
+<li>p <|>% x</li>
+<li>opt p</li>
+<li>optional p</li>
+</ul>
+</blockquote>
+<hr />
+<blockquote>
+<h2>Backtracking Parsers</h2>
+<ul>
+<li>attempt p</li>
+<li>p1 &gt;&gt;? p2</li>
+<li>p1 .&gt;&gt;? p2</li>
+<li>p1 .&gt;&gt;.? p2</li>
+<li>p1 &gt;&gt;=? p2</li>
+</ul>
+</blockquote>
+<hr />
 </div>
 
 
