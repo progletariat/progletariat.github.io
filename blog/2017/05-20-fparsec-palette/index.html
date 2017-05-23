@@ -168,6 +168,40 @@ function names in your head, so here's an attempt to provide a single page cheat
 </ul>
 </blockquote>
 <hr />
+<blockquote>
+<h2>Conditional Look Ahead Parsers</h2>
+<ul>
+<li>notEmpty p</li>
+<li>[not]followedBy p {+label}</li>
+<li>notFollowedByEof</li>
+<li>[not]followedByString[CI] s</li>
+<li>next[2]CharSatisfies[Not] fcb</li>
+<li>previousCharSatisfies[Not] fcb</li>
+<li>lookAhead p</li>
+</ul>
+</blockquote>
+<hr />
+<blockquote>
+<h2>Error Messaging Parsers</h2>
+<ul>
+<li>p <?> label</li>
+<li>p <??> label</li>
+<li>fail msg</li>
+<li>failFatally msg</li>
+</ul>
+</blockquote>
+<hr />
+<blockquote>
+<h2>State Handling Parsers</h2>
+<ul>
+<li>getUserState</li>
+<li>setUserState u</li>
+<li>updateUserState f</li>
+<li>userStateSatisfies f</li>
+<li>getPosition</li>
+</ul>
+</blockquote>
+<hr />
 </div>
 
 
