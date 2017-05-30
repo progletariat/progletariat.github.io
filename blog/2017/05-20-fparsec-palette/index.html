@@ -122,7 +122,7 @@ function names in your head, so here's an attempt to provide a single page cheat
 <li>preturn x</li>
 <li>p &gt;&gt;% x</li>
 <li>p |&gt;&gt; f</li>
-<li>p &gt;&gt;= f</li>
+<li>p &gt;&gt;= fp</li>
 <li>pl &gt;&gt;. pr (take right)</li>
 <li>pl .&gt;&gt; pr (take left)</li>
 <li>pl .&gt;&gt;. pr (take both)</li>
@@ -149,7 +149,7 @@ function names in your head, so here's an attempt to provide a single page cheat
 <blockquote>
 <h2>Optional Parsers</h2>
 <ul>
-<li>p1 <|> p2</li>
+<li>p1 <|> pOnlyTryIfP1FailedOnFirstToken</li>
 <li>choice seqOfParsers</li>
 <li>p <|>% x</li>
 <li>opt p</li>
@@ -160,11 +160,11 @@ function names in your head, so here's an attempt to provide a single page cheat
 <blockquote>
 <h2>Backtracking Parsers</h2>
 <ul>
-<li>attempt p</li>
-<li>p1 &gt;&gt;? p2</li>
-<li>p1 .&gt;&gt;? p2</li>
-<li>p1 .&gt;&gt;.? p2</li>
-<li>p1 &gt;&gt;=? p2</li>
+<li>attempt pAttemptButBacktrackIfFails</li>
+<li>pBacktrackIfFails &gt;&gt;? pBacktrackIfFailsFirstToken</li>
+<li>pBacktrackIfFails .&gt;&gt;? pBacktrackIfFailsFirstToken</li>
+<li>pBacktrackIfFails .&gt;&gt;.? pBacktrackIfFailsFirstToken</li>
+<li>pBacktrackIfFails &gt;&gt;=? fpBacktrackIfFailsFirstToken</li>
 </ul>
 </blockquote>
 <hr />
@@ -184,8 +184,8 @@ function names in your head, so here's an attempt to provide a single page cheat
 <blockquote>
 <h2>Error Messaging Parsers</h2>
 <ul>
-<li>p <?> label</li>
-<li>p <??> label</li>
+<li>p < ? > label</li>
+<li>p < ?? > label</li>
 <li>fail msg</li>
 <li>failFatally msg</li>
 </ul>
