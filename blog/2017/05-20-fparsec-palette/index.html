@@ -38,9 +38,9 @@
 
 
 <h2><strong> FParsec: <em>Palette</em> </strong></h2>
-<p><a href="http://www.quanttec.com/fparsec/">FParsec</a> is a beautiful <a href="https://en.wikipedia.org/wiki/Parser_combinator">parser combinator</a>
-library for F# (based on Haskell's <a href="https://wiki.haskell.org/Parsec">Parsec</a>). Learning it means holding quite a lot of different
-function names in your head, so here's an attempt to provide a single page cheat-sheet.</p>
+<p><a href="http://www.quanttec.com/fparsec/">FParsec</a> is an amazing <a href="https://en.wikipedia.org/wiki/Parser_combinator">parser combinator</a>
+library for F# written by Stephan Tolksdorf (and based on Haskell's <a href="https://wiki.haskell.org/Parsec">Parsec</a>). Learning it means
+holding quite a lot of different function names in your head, so here's an attempt to provide a single page cheat-sheet.</p>
 <div class="palette fewerColumnsPalette">
 <blockquote>
 <h2>Single Char Parsers</h2>
@@ -199,6 +199,47 @@ function names in your head, so here's an attempt to provide a single page cheat
 <li>updateUserState f</li>
 <li>userStateSatisfies f</li>
 <li>getPosition</li>
+</ul>
+</blockquote>
+<hr />
+</div>
+<h3><em>FParsec <strong>Pipes</strong></em></h3>
+<p><a href="https://github.com/rspeele/FParsec-Pipes">FParsec Pipes</a> is an independant extension to FParsec, written by Robert Peele.
+It adds some new operators and combinators that make it (arguably) more intuitive to translate a grammar into a parser.
+The <a href="http://rspeele.github.io/FParsec-Pipes/Intro.html">documentation</a> for Pipes is actually pretty concise, but I wanted
+a single page reference to both libraries so I've documented some of it below.</p>
+<div class="palette fewerColumnsPalette">
+<blockquote>
+<h2>Default Parsers</h2>
+<ul>
+<li>%"a specific string" // pstring ...</li>
+<li>%ci "case insensitive" // pstringCI ...</li>
+<li>%'c' // pchar ...</li>
+<li>%ci 'c' // pcharCI ...</li>
+<li>%['a'; 'b'] // choice [...]</li>
+<li>%["hello"; "there"] // choice [...]</li>
+<li>%[pint32; pMyParser] // choice [...]</li>
+</ul>
+</blockquote>
+<hr />
+<blockquote>
+<h2>Parsers For Types</h2>
+<ul>
+<li>%p< int > // pint32</li>
+<li>%p< uint16 > // puint16</li>
+<li>%p< float > // pfloat</li>
+<li>%p< Position > // getPosition</li>
+</ul>
+</blockquote>
+<hr />
+<blockquote>
+<h2>Pipes</h2>
+<ul>
+<li>%% // start a pipe</li>
+<li>-- // build pipe</li>
+<li>+. // capture element</li>
+<li>-|&gt; // empty captured pipe elements to func</li>
+<li>-%&gt; auto // empty captured pipe elements to tuple</li>
 </ul>
 </blockquote>
 <hr />
