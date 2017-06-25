@@ -58,6 +58,22 @@
 </description>
     </item>
     <item>
+      <title>Fable / Three.js  - Hello Cube</title>
+      <guid>http://www.progletariat.com//blog/2017/06-22-fable-threejs-hello</guid>
+      <link>http://www.progletariat.com//blog/2017/06-22-fable-threejs-hello/index.html</link>
+      <pubDate>Thu, 22 Jun 2017 06:19:37 GMT</pubDate>
+      <description>&lt;h2&gt;&lt;strong&gt; Fable ThreeJs: &lt;em&gt;Hello Cube&lt;/em&gt; &lt;/strong&gt;&lt;/h2&gt;
+&lt;div id="graphicsWrapper"&gt;&lt;div id="graphicsContainer"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.js"&gt;&lt;/script&gt;
+&lt;script src="/otherOutput/fable1/BlogFableThreeHelloWorldBuild.js"&gt;&lt;/script&gt;
+&lt;p&gt;With some more documentation&lt;/p&gt;
+&lt;p&gt;yarn install
+dotnet restore etc...&lt;/p&gt;
+
+
+</description>
+    </item>
+    <item>
       <title>FParsec Palette</title>
       <guid>http://www.progletariat.com//blog/2017/05-20-fparsec-palette</guid>
       <link>http://www.progletariat.com//blog/2017/05-20-fparsec-palette/index.html</link>
