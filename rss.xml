@@ -62,20 +62,7 @@
       <guid>http://www.progletariat.com//blog/2017/06-22-fable-threejs-hello</guid>
       <link>http://www.progletariat.com//blog/2017/06-22-fable-threejs-hello/index.html</link>
       <pubDate>Thu, 22 Jun 2017 06:19:37 GMT</pubDate>
-      <description>&lt;h2&gt;&lt;strong&gt; Fable &amp;amp; ThreeJs: &lt;em&gt;Hello Cube&lt;/em&gt; &lt;/strong&gt;&lt;/h2&gt;
-&lt;div id="graphicsWrapper"&gt;&lt;div id="graphicsContainer"&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.js"&gt;&lt;/script&gt;
-&lt;script src="/otherOutput/fable1/BlogFableThreeHelloWorldBuild.js"&gt;&lt;/script&gt;
-&lt;p&gt;&lt;strong&gt;The F# to JS compiler &lt;a href="http://fable.io/"&gt;Fable&lt;/a&gt; is looking ever more impressive. What better way to showcase its abilities than
-by putting a spinning a cube on your screen?...&lt;/strong&gt; The official Fable ThreeJs / WebGL &lt;a href="http://fable.io/samples/webGLTerrain/index.html"&gt;demo&lt;/a&gt;
-is actually far superiour to my effort here. This is a much cut-down version of that, to show how little code is needed to get F#
-drawing 3D graphics in a browser.&lt;/p&gt;
-&lt;h3&gt;&lt;em&gt;First things &lt;strong&gt;first&lt;/strong&gt;&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;Your machine will need .NET Core installed so you can use the dotnet command line tool. Assuming you have that, the quickest way to get started
-is to clone the official Fable samples &lt;a href="https://github.com/fable-compiler/samples-browser"&gt;repository&lt;/a&gt; and then run the &lt;code&gt;restore&lt;/code&gt; script contained
-within that repository, which will install the fable extensions to the dotnet command line tool and then go on to run &lt;code&gt;yarn install&lt;/code&gt; and
-&lt;code&gt;dotnet restore&lt;/code&gt; for you to pull down all the required npm (javascript) and paket (dotnet / nuget) dependencies.&lt;/p&gt;
-
+      <description>
 
 </description>
     </item>
