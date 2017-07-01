@@ -45,7 +45,7 @@
 <script src="/otherOutput/fable1/BlogFableThreeHelloWorldBuild.js"></script>
 <p><strong>The F# to JS compiler <a href="http://fable.io/">Fable</a> is looking ever more impressive. What better way to showcase its abilities than
 by putting a spinning a cube on your screen?...</strong> The official Fable ThreeJs / WebGL <a href="http://fable.io/samples/webGLTerrain/index.html">demo</a>
-is actually far superiour to my effort here. This is a much cut-down version of that, to show how little code is needed to get F#
+is actually far superior to my effort here. This is a much cut-down version of that, to show how little code is needed to get F#
 drawing 3D graphics in a browser.</p>
 <h3><em><strong>First things</strong> first</em></h3>
 <p>Your machine will need .NET Core installed so you can use the dotnet command line tool. Assuming you have that, the quickest way to get started
@@ -86,7 +86,7 @@ size of the graphics canvas.</p>
 </table>
 <h4><em><strong>1:</strong> Lights</em></h4>
 <p>Our scene needs lights (so we can see stuff).The below function add a dim ambient light and
-a bright spotslight to the scene.</p>
+a bright spotlight to the scene.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -135,7 +135,7 @@ during rendering.</p>
 </table>
 <h4><em><strong>3:</strong> Renderer</em></h4>
 <p>OK, so not quite a case of lights-camera-action, as we now need a renderer. A renderer is kind of
-analagous to a screen, and embodies the output area for our graphics. We have to tell Three which
+analogous to a screen, and embodies the output area for our graphics. We have to tell Three which
 DOM element of our page to put the render target into. We also get to choose which kind of renderer
 to use. WebGLRenderer is the fastest, but Three does support other renderers that could be used on
 devices without WebGL support. The call to setClearColour sets the background colour for areas of
@@ -155,7 +155,7 @@ aspect ratio of the camera.</p>
 <span class="l">11: </span>
 <span class="l">12: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 57)" onmouseover="showTip(event, 'fs4', 57)" class="f">initRenderer</span> () <span class="o">=</span> 
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 57)" onmouseover="showTip(event, 'fs4', 57)" class="f">initRenderer</span> () <span class="o">=</span>
 
     <span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 58)" onmouseover="showTip(event, 'fs4', 58)" class="i">container</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 59)" onmouseover="showTip(event, 'fs4', 59)" class="t">Browser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs17', 60)" onmouseover="showTip(event, 'fs17', 60)" class="i">document</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 61)" onmouseover="showTip(event, 'fs4', 61)" class="i">getElementById</span>(<span class="s">&quot;graphicsContainer&quot;</span>)
     <span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 62)" onmouseover="showTip(event, 'fs4', 62)" class="i">renderer</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 63)" onmouseover="showTip(event, 'fs4', 63)" class="t">Three</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs18', 64)" onmouseover="showTip(event, 'fs18', 64)" class="t">WebGLRenderer</span>()
@@ -165,7 +165,7 @@ aspect ratio of the camera.</p>
     <span class="c">// Set antialias tbd...</span>
     <span onmouseout="hideTip(event, 'fs4', 73)" onmouseover="showTip(event, 'fs4', 73)" class="i">container</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 74)" onmouseover="showTip(event, 'fs4', 74)" class="i">innerHTML</span> <span class="o">&lt;-</span> <span class="s">&quot;&quot;</span>
     <span onmouseout="hideTip(event, 'fs4', 75)" onmouseover="showTip(event, 'fs4', 75)" class="i">container</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 76)" onmouseover="showTip(event, 'fs4', 76)" class="i">appendChild</span>((<span onmouseout="hideTip(event, 'fs4', 77)" onmouseover="showTip(event, 'fs4', 77)" class="i">renderer</span> <span class="o">:&gt;</span> <span onmouseout="hideTip(event, 'fs4', 78)" onmouseover="showTip(event, 'fs4', 78)" class="i">Three</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs20', 79)" onmouseover="showTip(event, 'fs20', 79)" class="i">Renderer</span>)<span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 80)" onmouseover="showTip(event, 'fs4', 80)" class="i">domElement</span>) <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs4', 81)" onmouseover="showTip(event, 'fs4', 81)" class="f">ignore</span>
-    
+
     <span onmouseout="hideTip(event, 'fs4', 82)" onmouseover="showTip(event, 'fs4', 82)" class="i">renderer</span>
 </code></pre></td>
 </tr>
@@ -175,7 +175,7 @@ aspect ratio of the camera.</p>
 We have only one cast member, a simple cube. Fortunately Three provides methods for defining most
 standard geometric shapes, so we don't have to build it up out of individual triangles. Each object
 also needs its surface properties defining (so that we know what it should look like). Here we say
-that our cube's surface is made from a Lambert type material (which would allow for some shinyness,
+that our cube's surface is made from a Lambert type material (which would allow for some shininess,
 but we don't set that up here and just go for a plain purple matt surface). We buffer the cube's
 geometry, which moves it to a more compact internal representation (for better performance) and then
 combine it's shape and material definition together into a mesh. Finally we add the mesh to the scene
@@ -242,8 +242,8 @@ later on in rendering / animation.</p>
 </code></pre></td>
 </tr>
 </table>
-<h3><em><strong>Make it</strong> move</em></h3>
-<p>Soo, as we're using the movies as an analogy, we actuall ought to add some movement to the scene,
+<h3><em><strong>Making it</strong> move</em></h3>
+<p>So, as we're using the movies as an analogy, we actually ought to add some movement to the scene,
 a spinning cube is going to be much more impressive than a static one. Each frame we rotate the
 cube a little about each of its axes to make it appear to spin. The use of requestAnimationFrame
 (rather than a loop) ensures that the animation is paused if the render's target element isn't
