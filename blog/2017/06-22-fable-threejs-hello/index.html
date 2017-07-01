@@ -39,24 +39,24 @@
 	
 
 
-<h2><strong> Fable &amp; ThreeJs: <em>Hello Cube</em> </strong></h2>
+<h2><strong> F#, Fable &amp; ThreeJs: <em>Hello Cube</em> </strong></h2>
 <div id="graphicsWrapper"><div id="graphicsContainer"></div></div>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.js"></script>
 <script src="/otherOutput/fable1/BlogFableThreeHelloWorldBuild.js"></script>
 <p><strong>The F# to JS compiler <a href="http://fable.io/">Fable</a> is looking ever more impressive. What better way to showcase its abilities than
 by putting a spinning a cube on your screen?...</strong> The official Fable ThreeJs / WebGL <a href="http://fable.io/samples/webGLTerrain/index.html">demo</a>
-is actually far superior to my effort here. This is a much cut-down version of that, to show how little code is needed to get F#
+is actually far superior to my effort here. This is a much cut-down version of that demo, showing how little code is needed to get F#
 drawing 3D graphics in a browser.</p>
 <h3><em><strong>First things</strong> first</em></h3>
-<p>Your machine will need .NET Core installed so you can use the dotnet command line tool. Assuming you have that, the quickest way to get started
+<p>To use Fable, your machine will need .NET Core installed - so you can use the <code>dotnet</code> command line tool. Assuming you have that, the quickest way to get started
 is to clone the official Fable <a href="https://github.com/fable-compiler/samples-browser">samples-browser</a> repository and then run the <code>restore</code> script
-contained within that repository, which will install the fable extensions to the dotnet command line tool and then go on to run <code>yarn install</code> and
+contained in its base directory, which will install the Fable extensions to the dotnet command line tool and will also then go on to run <code>yarn install</code> and
 <code>dotnet restore</code> for you. This will pull down all the required npm (javascript) and paket (dotnet / nuget) dependencies. You can then replace the
-code in the samples-browser/webGLTerrain/src/App.fs file with the below. <em>Note that you should comment out the first two lines of the below code
-(which are necessary only as I'm writing an fsx script file for this blog, and you'll be writing a standard fs file)</em>. Once you've copied, pasted
+code in the samples-browser/webGLTerrain/src/App.fs file with the below. <em>Note that you should comment out the first two lines of the below code</em>
+(they are necessary only as I'm writing a fsx script file for this blog, whereas probably you would write a standard fs file, if not blogging). Once you've copied, pasted
 and commented the code, you can then run <code>dotnet fable npm-run start</code> to compile the code to javascript and launch a dev server, then browse to
-<code>http://localhost:8080/webGLTerrain</code> (which should actually now show you a plain spinning cube rather than fancy terrain). Talking of the code,
-the first lines are below. Initially we just import the necessary namespaces and modules, then we define two functions to return the desired
+<code>http://localhost:8080/webGLTerrain</code> (which should actually now show you a plain spinning cube rather than fancy terrain). <strong>Talking of the code,
+the first lines are below</strong>. Initially we just import the necessary namespaces and modules, then we define two functions to return the desired
 size of the graphics canvas.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
@@ -69,9 +69,11 @@ size of the graphics canvas.</p>
 <span class="l"> 9: </span>
 <span class="l">10: </span>
 <span class="l">11: </span>
+<span class="l">12: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="prep">#r</span> <span class="s">&quot;../../../packages/Fable.Core/lib/netstandard1.6/Fable.Core.dll&quot;</span>     <span class="c">// Comment out if you are writing an fs file</span>
-<span class="prep">#load</span> <span class="s">&quot;../../../node_modules/fable-import-three/Fable.Import.Three.fs&quot;</span>  <span class="c">// Comment out if you are writing an fs file</span>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="c">// Comment out the below if you are writing a .fs (compiled) file rather than a .fsx (script) file</span>
+<span class="prep">#r</span> <span class="s">&quot;../../../packages/Fable.Core/lib/netstandard1.6/Fable.Core.dll&quot;</span>
+<span class="prep">#load</span> <span class="s">&quot;../../../node_modules/fable-import-three/Fable.Import.Three.fs&quot;</span>
 
 <span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">System</span>
 <span class="k">open</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">Fable</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">Core</span>
@@ -85,8 +87,17 @@ size of the graphics canvas.</p>
 </tr>
 </table>
 <h4><em><strong>1:</strong> Lights</em></h4>
-<p>Our scene needs lights (so we can see stuff).The below function add a dim ambient light and
-a bright spotlight to the scene.</p>
+<p>Our scene needs lights (so that we can see stuff).The below function adds a dim ambient light and
+a bright spotlight to the scene. Ambient light defines a base-level of illumination within the
+scene. It does not have a particular direction or position (hence it is easy to create). By contrast,
+a spotlight has an exact location and shines in a particular direction, illuminating objects within
+it's beam differently depending on the angle they meet it at. Here we just set the spotlight's
+position and leave it shining at the origin (the center of our scene). Note that before we
+specify a colour as a hex string, we have to use <code>U2.Case2</code> to create a union case. This is because
+the underlying javascript libraries are weakly typed, but F# is very much a strongly typed language.
+Therefore, where javascript functions are willing to accept various types of arguments, the F#
+translation of them has to wrap each of the javascript-acceptable types in a union to keep the F#
+type-system happy.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
@@ -95,7 +106,6 @@ a bright spotlight to the scene.</p>
 <span class="l">6: </span>
 <span class="l">7: </span>
 <span class="l">8: </span>
-<span class="l">9: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 20)" onmouseover="showTip(event, 'fs4', 20)" class="f">initLights</span> (<span onmouseout="hideTip(event, 'fs4', 21)" onmouseover="showTip(event, 'fs4', 21)" class="i">scene</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs4', 22)" onmouseover="showTip(event, 'fs4', 22)" class="t">Scene</span>) <span class="o">=</span>
 
@@ -104,14 +114,13 @@ a bright spotlight to the scene.</p>
 
     <span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 31)" onmouseover="showTip(event, 'fs4', 31)" class="i">spotLight</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 32)" onmouseover="showTip(event, 'fs4', 32)" class="t">Three</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs10', 33)" onmouseover="showTip(event, 'fs10', 33)" class="t">SpotLight</span>(<span onmouseout="hideTip(event, 'fs4', 34)" onmouseover="showTip(event, 'fs4', 34)" class="t">U2</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 35)" onmouseover="showTip(event, 'fs4', 35)" class="p">Case2</span> <span class="s">&quot;#FFFFFF&quot;</span>)
     <span onmouseout="hideTip(event, 'fs4', 36)" onmouseover="showTip(event, 'fs4', 36)" class="i">spotLight</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs11', 37)" onmouseover="showTip(event, 'fs11', 37)" class="i">position</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs12', 38)" onmouseover="showTip(event, 'fs12', 38)" class="f">set</span>(<span class="o">-</span><span class="n">30.</span>, <span class="n">60.</span>, <span class="n">60.</span>) <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs4', 39)" onmouseover="showTip(event, 'fs4', 39)" class="f">ignore</span>
-    <span class="c">//spotLight.castShadow &lt;- true</span>
     <span onmouseout="hideTip(event, 'fs4', 40)" onmouseover="showTip(event, 'fs4', 40)" class="i">scene</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs9', 41)" onmouseover="showTip(event, 'fs9', 41)" class="f">add</span>(<span onmouseout="hideTip(event, 'fs4', 42)" onmouseover="showTip(event, 'fs4', 42)" class="i">spotLight</span>)
 </code></pre></td>
 </tr>
 </table>
 <h3><em><strong>2:</strong> Camera</em></h3>
-<p>We also need a camera, which sets the location that the scene is viewed from. We also need to set the
-aspect ration of the field of view. We use the width and height functions we defined above so that the
+<p>We also need a camera, which sets the location that the scene is viewed from. We need to set the
+aspect ratio of the camer'a field of view. We use the <code>width()</code> and <code>height()</code> functions we defined above so that the
 camera field's aspect will match the intended dimensions of our graphics output area. The last line of
 the function is its return value; so the camera is returned back to the caller so that it can be used
 during rendering.</p>
@@ -134,14 +143,14 @@ during rendering.</p>
 </tr>
 </table>
 <h4><em><strong>3:</strong> Renderer</em></h4>
-<p>OK, so not quite a case of lights-camera-action, as we now need a renderer. A renderer is kind of
+<p>OK, so not quite a case of <em>lights-camera-action</em>, as we now need a renderer. A renderer is sort of
 analogous to a screen, and embodies the output area for our graphics. We have to tell Three which
-DOM element of our page to put the render target into. We also get to choose which kind of renderer
-to use. WebGLRenderer is the fastest, but Three does support other renderers that could be used on
-devices without WebGL support. The call to setClearColour sets the background colour for areas of
-the screen that are not otherwise drawn on. Again we set the size of the output area using the
-width and height functions that we defined above, so that the output dimensions tie up with the
-aspect ratio of the camera.</p>
+DOM element within our page to put the render target into (and out HTML page must contain an element
+called <code>graphicsContainer</code>. We also get to choose which kind of renderer to use. <code>WebGLRenderer</code> is
+the fastest, but Three does support other renderers that could be used on devices without WebGL support.
+The call to <code>setClearColour</code> sets the background colour for areas of the screen that are not otherwise
+drawn on. Again we set the size of the output area using the <code>width()</code> and <code>height()</code> functions that we defined
+above, so that the output dimensions tie up with the aspect ratio of the camera.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -153,18 +162,16 @@ aspect ratio of the camera.</p>
 <span class="l"> 9: </span>
 <span class="l">10: </span>
 <span class="l">11: </span>
-<span class="l">12: </span>
 </pre></td>
 <td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 57)" onmouseover="showTip(event, 'fs4', 57)" class="f">initRenderer</span> () <span class="o">=</span>
 
-    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 58)" onmouseover="showTip(event, 'fs4', 58)" class="i">container</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 59)" onmouseover="showTip(event, 'fs4', 59)" class="t">Browser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs17', 60)" onmouseover="showTip(event, 'fs17', 60)" class="i">document</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 61)" onmouseover="showTip(event, 'fs4', 61)" class="i">getElementById</span>(<span class="s">&quot;graphicsContainer&quot;</span>)
-    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 62)" onmouseover="showTip(event, 'fs4', 62)" class="i">renderer</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 63)" onmouseover="showTip(event, 'fs4', 63)" class="t">Three</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs18', 64)" onmouseover="showTip(event, 'fs18', 64)" class="t">WebGLRenderer</span>()
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 58)" onmouseover="showTip(event, 'fs4', 58)" class="i">renderer</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 59)" onmouseover="showTip(event, 'fs4', 59)" class="t">Three</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs17', 60)" onmouseover="showTip(event, 'fs17', 60)" class="t">WebGLRenderer</span>()
+    <span onmouseout="hideTip(event, 'fs4', 61)" onmouseover="showTip(event, 'fs4', 61)" class="i">renderer</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs18', 62)" onmouseover="showTip(event, 'fs18', 62)" class="f">setClearColor</span>(<span class="s">&quot;#0A1D2D&quot;</span>)
+    (<span onmouseout="hideTip(event, 'fs4', 63)" onmouseover="showTip(event, 'fs4', 63)" class="i">renderer</span> <span class="o">:&gt;</span> <span onmouseout="hideTip(event, 'fs4', 64)" onmouseover="showTip(event, 'fs4', 64)" class="t">Three</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs19', 65)" onmouseover="showTip(event, 'fs19', 65)" class="t">Renderer</span>)<span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 66)" onmouseover="showTip(event, 'fs4', 66)" class="f">setSize</span>(<span onmouseout="hideTip(event, 'fs4', 67)" onmouseover="showTip(event, 'fs4', 67)" class="f">width</span>(), <span onmouseout="hideTip(event, 'fs4', 68)" onmouseover="showTip(event, 'fs4', 68)" class="f">height</span>())
 
-    <span onmouseout="hideTip(event, 'fs4', 65)" onmouseover="showTip(event, 'fs4', 65)" class="i">renderer</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs19', 66)" onmouseover="showTip(event, 'fs19', 66)" class="f">setClearColor</span>(<span class="s">&quot;#0A1D2D&quot;</span>)
-    (<span onmouseout="hideTip(event, 'fs4', 67)" onmouseover="showTip(event, 'fs4', 67)" class="i">renderer</span> <span class="o">:&gt;</span> <span onmouseout="hideTip(event, 'fs4', 68)" onmouseover="showTip(event, 'fs4', 68)" class="t">Three</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs20', 69)" onmouseover="showTip(event, 'fs20', 69)" class="t">Renderer</span>)<span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 70)" onmouseover="showTip(event, 'fs4', 70)" class="f">setSize</span>(<span onmouseout="hideTip(event, 'fs4', 71)" onmouseover="showTip(event, 'fs4', 71)" class="f">width</span>(), <span onmouseout="hideTip(event, 'fs4', 72)" onmouseover="showTip(event, 'fs4', 72)" class="f">height</span>())
-    <span class="c">// Set antialias tbd...</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 69)" onmouseover="showTip(event, 'fs4', 69)" class="i">container</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 70)" onmouseover="showTip(event, 'fs4', 70)" class="t">Browser</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs20', 71)" onmouseover="showTip(event, 'fs20', 71)" class="i">document</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 72)" onmouseover="showTip(event, 'fs4', 72)" class="i">getElementById</span>(<span class="s">&quot;graphicsContainer&quot;</span>)
     <span onmouseout="hideTip(event, 'fs4', 73)" onmouseover="showTip(event, 'fs4', 73)" class="i">container</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 74)" onmouseover="showTip(event, 'fs4', 74)" class="i">innerHTML</span> <span class="o">&lt;-</span> <span class="s">&quot;&quot;</span>
-    <span onmouseout="hideTip(event, 'fs4', 75)" onmouseover="showTip(event, 'fs4', 75)" class="i">container</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 76)" onmouseover="showTip(event, 'fs4', 76)" class="i">appendChild</span>((<span onmouseout="hideTip(event, 'fs4', 77)" onmouseover="showTip(event, 'fs4', 77)" class="i">renderer</span> <span class="o">:&gt;</span> <span onmouseout="hideTip(event, 'fs4', 78)" onmouseover="showTip(event, 'fs4', 78)" class="i">Three</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs20', 79)" onmouseover="showTip(event, 'fs20', 79)" class="i">Renderer</span>)<span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 80)" onmouseover="showTip(event, 'fs4', 80)" class="i">domElement</span>) <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs4', 81)" onmouseover="showTip(event, 'fs4', 81)" class="f">ignore</span>
+    <span onmouseout="hideTip(event, 'fs4', 75)" onmouseover="showTip(event, 'fs4', 75)" class="i">container</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 76)" onmouseover="showTip(event, 'fs4', 76)" class="i">appendChild</span>((<span onmouseout="hideTip(event, 'fs4', 77)" onmouseover="showTip(event, 'fs4', 77)" class="i">renderer</span> <span class="o">:&gt;</span> <span onmouseout="hideTip(event, 'fs4', 78)" onmouseover="showTip(event, 'fs4', 78)" class="i">Three</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs19', 79)" onmouseover="showTip(event, 'fs19', 79)" class="i">Renderer</span>)<span class="o">.</span><span onmouseout="hideTip(event, 'fs4', 80)" onmouseover="showTip(event, 'fs4', 80)" class="i">domElement</span>) <span class="o">|&gt;</span> <span onmouseout="hideTip(event, 'fs4', 81)" onmouseover="showTip(event, 'fs4', 81)" class="f">ignore</span>
 
     <span onmouseout="hideTip(event, 'fs4', 82)" onmouseover="showTip(event, 'fs4', 82)" class="i">renderer</span>
 </code></pre></td>
@@ -173,7 +180,7 @@ aspect ratio of the camera.</p>
 <h3><em><strong>4:</strong> Geometry</em></h3>
 <p>Nearly there, but not quite like the movies. Now we have to create something to star in our scene.
 We have only one cast member, a simple cube. Fortunately Three provides methods for defining most
-standard geometric shapes, so we don't have to build it up out of individual triangles. Each object
+standard geometric shapes, so we don't have to build the cube up out of individual triangles. Each object
 also needs its surface properties defining (so that we know what it should look like). Here we say
 that our cube's surface is made from a Lambert type material (which would allow for some shininess,
 but we don't set that up here and just go for a plain purple matt surface). We buffer the cube's
@@ -209,9 +216,11 @@ and also return the cube geometry for later use.</p>
 </tr>
 </table>
 <h4><em><strong>5:</strong> Action</em></h4>
-<p>Finally we're there. We can create a Scene and initialise all required elements. We return a
-4-tuple of the 4 key graphics elements back to the caller so that those elements can be used
-later on in rendering / animation.</p>
+<p>Finally we're there. We can create a Scene and initialise all required elements by calling
+the functions we defined above. We return a 4-tuple of the 4 key graphics elements back to
+the caller so that those elements can be used later on in rendering / animation. In-fact,
+"the caller" is just the line of script at the bottom of the section, which creates top-level
+bindings to each of the key graphics elements.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
 <span class="l"> 2: </span>
 <span class="l"> 3: </span>
@@ -291,10 +300,10 @@ on screen.</p>
 <div class="tip" id="fs14">property Object3D.matrixAutoUpdate: bool</div>
 <div class="tip" id="fs15">property Object3D.rotationAutoUpdate: bool</div>
 <div class="tip" id="fs16">property Vector3.z: float</div>
-<div class="tip" id="fs17">val document : Browser.Document<br /><br />Full name: Fable.Import.Browser.document</div>
-<div class="tip" id="fs18">Multiple items<br />type WebGLRenderer =<br />&#160;&#160;interface Renderer<br />&#160;&#160;new : ?parameters:WebGLRendererParameters -&gt; WebGLRenderer<br />&#160;&#160;member clear : ?color:bool * ?depth:bool * ?stencil:bool -&gt; unit<br />&#160;&#160;member clearColor : unit -&gt; unit<br />&#160;&#160;member clearDepth : unit -&gt; unit<br />&#160;&#160;member clearStencil : unit -&gt; unit<br />&#160;&#160;member clearTarget : renderTarget:WebGLRenderTarget * color:bool * depth:bool * stencil:bool -&gt; unit<br />&#160;&#160;member dispose : unit -&gt; unit<br />&#160;&#160;member enableScissorTest : boolean:obj -&gt; obj<br />&#160;&#160;member forceContextLoss : unit -&gt; unit<br />&#160;&#160;...<br /><br />Full name: Fable.Import.Three.WebGLRenderer<br /><br />--------------------<br />new : ?parameters:WebGLRendererParameters -&gt; WebGLRenderer</div>
-<div class="tip" id="fs19">member WebGLRenderer.setClearColor : color:Color * ?alpha:float -&gt; unit<br />member WebGLRenderer.setClearColor : color:string * ?alpha:float -&gt; unit<br />member WebGLRenderer.setClearColor : color:float * ?alpha:float -&gt; unit</div>
-<div class="tip" id="fs20">type Renderer =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member domElement : HTMLCanvasElement<br />&#160;&#160;&#160;&#160;abstract member render : scene:Scene * camera:Camera -&gt; unit<br />&#160;&#160;&#160;&#160;abstract member setSize : width:float * height:float * ?updateStyle:bool -&gt; unit<br />&#160;&#160;&#160;&#160;abstract member domElement : HTMLCanvasElement with set<br />&#160;&#160;end<br /><br />Full name: Fable.Import.Three.Renderer</div>
+<div class="tip" id="fs17">Multiple items<br />type WebGLRenderer =<br />&#160;&#160;interface Renderer<br />&#160;&#160;new : ?parameters:WebGLRendererParameters -&gt; WebGLRenderer<br />&#160;&#160;member clear : ?color:bool * ?depth:bool * ?stencil:bool -&gt; unit<br />&#160;&#160;member clearColor : unit -&gt; unit<br />&#160;&#160;member clearDepth : unit -&gt; unit<br />&#160;&#160;member clearStencil : unit -&gt; unit<br />&#160;&#160;member clearTarget : renderTarget:WebGLRenderTarget * color:bool * depth:bool * stencil:bool -&gt; unit<br />&#160;&#160;member dispose : unit -&gt; unit<br />&#160;&#160;member enableScissorTest : boolean:obj -&gt; obj<br />&#160;&#160;member forceContextLoss : unit -&gt; unit<br />&#160;&#160;...<br /><br />Full name: Fable.Import.Three.WebGLRenderer<br /><br />--------------------<br />new : ?parameters:WebGLRendererParameters -&gt; WebGLRenderer</div>
+<div class="tip" id="fs18">member WebGLRenderer.setClearColor : color:Color * ?alpha:float -&gt; unit<br />member WebGLRenderer.setClearColor : color:string * ?alpha:float -&gt; unit<br />member WebGLRenderer.setClearColor : color:float * ?alpha:float -&gt; unit</div>
+<div class="tip" id="fs19">type Renderer =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;abstract member domElement : HTMLCanvasElement<br />&#160;&#160;&#160;&#160;abstract member render : scene:Scene * camera:Camera -&gt; unit<br />&#160;&#160;&#160;&#160;abstract member setSize : width:float * height:float * ?updateStyle:bool -&gt; unit<br />&#160;&#160;&#160;&#160;abstract member domElement : HTMLCanvasElement with set<br />&#160;&#160;end<br /><br />Full name: Fable.Import.Three.Renderer</div>
+<div class="tip" id="fs20">val document : Browser.Document<br /><br />Full name: Fable.Import.Browser.document</div>
 <div class="tip" id="fs21">Multiple items<br />type BoxGeometry =<br />&#160;&#160;inherit Geometry<br />&#160;&#160;new : width:float * height:float * depth:float * ?widthSegments:float * ?heightSegments:float * ?depthSegments:float -&gt; BoxGeometry<br />&#160;&#160;member clone : unit -&gt; BoxGeometry<br />&#160;&#160;member parameters : obj<br />&#160;&#160;member parameters : obj with set<br /><br />Full name: Fable.Import.Three.BoxGeometry<br /><br />--------------------<br />new : width:float * height:float * depth:float * ?widthSegments:float * ?heightSegments:float * ?depthSegments:float -&gt; BoxGeometry</div>
 <div class="tip" id="fs22">type MeshLambertMaterialParameters =<br />&#160;&#160;interface<br />&#160;&#160;&#160;&#160;inherit MaterialParameters<br />&#160;&#160;&#160;&#160;abstract member alphaMap : Texture option<br />&#160;&#160;&#160;&#160;abstract member aoMap : Texture option<br />&#160;&#160;&#160;&#160;abstract member aoMapIntensity : float option<br />&#160;&#160;&#160;&#160;abstract member blending : Blending option<br />&#160;&#160;&#160;&#160;abstract member color : U2&lt;float,string&gt; option<br />&#160;&#160;&#160;&#160;abstract member combine : Combine option<br />&#160;&#160;&#160;&#160;abstract member emissive : U2&lt;float,string&gt; option<br />&#160;&#160;&#160;&#160;abstract member emissiveIntensity : float option<br />&#160;&#160;&#160;&#160;abstract member emissiveMap : Texture option<br />&#160;&#160;&#160;&#160;...<br />&#160;&#160;end<br /><br />Full name: Fable.Import.Three.MeshLambertMaterialParameters</div>
 <div class="tip" id="fs23">property MeshLambertMaterialParameters.color: U2&lt;float,string&gt; option</div>
