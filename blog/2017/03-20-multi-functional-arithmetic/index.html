@@ -16,18 +16,16 @@
 
 	<script type="text/javascript" src="/fsharp.formatting/tooltips.js"></script>
     <script src="/javascripts/highlight.pack.js"></script>
-	<!--
-    <script>hljs.initHighlightingOnLoad();</script>
-    -->
+    <script src="/javascripts/multifunctional.js"></script>
 
-   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-   <link rel="manifest" href="/manifest.json">
-   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0a1d2d">
-   <meta name="apple-mobile-web-app-title" content="Progletariat">
-   <meta name="application-name" content="Progletariat">
-   <meta name="theme-color" content="#0a1d2d">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0a1d2d">
+    <meta name="apple-mobile-web-app-title" content="Progletariat">
+    <meta name="application-name" content="Progletariat">
+    <meta name="theme-color" content="#0a1d2d">
 
   </head>
   <body>
@@ -109,48 +107,7 @@
 <td class="snippet"><pre class="fssnip"><code lang="clojure">
 </code></pre></td></tr></table>
 </div>
-<script>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l"> 1: </span>
-<span class="l"> 2: </span>
-<span class="l"> 3: </span>
-<span class="l"> 4: </span>
-<span class="l"> 5: </span>
-<span class="l"> 6: </span>
-<span class="l"> 7: </span>
-<span class="l"> 8: </span>
-<span class="l"> 9: </span>
-<span class="l">10: </span>
-<span class="l">11: </span>
-<span class="l">12: </span>
-<span class="l">13: </span>
-<span class="l">14: </span>
-<span class="l">15: </span>
-<span class="l">16: </span>
-<span class="l">17: </span>
-<span class="l">18: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">function</span> <span class="i">addCaption</span>(<span class="i">ele</span>) {
-
-	<span class="i">var</span> <span class="i">table</span> <span class="o">=</span> <span class="i">ele</span><span class="o">.</span><span class="i">parentElement</span><span class="o">.</span><span class="i">parentElement</span><span class="o">.</span><span class="i">parentElement</span><span class="o">.</span><span class="i">parentElement</span><span class="o">.</span><span class="i">parentElement</span>;
-	<span class="i">var</span> <span class="i">caption</span> <span class="o">=</span> <span class="i">document</span><span class="o">.</span><span class="i">createElement</span>(<span class="s">&quot;caption&quot;</span>);
-	<span class="i">var</span> <span class="i">codeClass</span> <span class="o">=</span> <span class="i">ele</span><span class="o">.</span><span class="i">className</span><span class="o">.</span><span class="i">replace</span>(<span class="o">&#39;</span><span class="i">hljs&#39;</span>, <span class="o">&#39;</span><span class="o">&#39;</span>);
-
-	<span class="i">caption</span><span class="o">.</span><span class="i">innerHTML</span> <span class="o">=</span> <span class="i">codeClass</span>;
-	<span class="i">table</span><span class="o">.</span><span class="i">insertBefore</span>(<span class="i">caption</span>, <span class="i">table</span><span class="o">.</span><span class="i">firstChild</span>);
-	<span class="i">table</span><span class="o">.</span><span class="i">className</span> <span class="o">+=</span> <span class="s">&#39; &#39;</span> <span class="o">+</span> <span class="i">codeClass</span>;
-}
-
-<span class="i">var</span> <span class="i">codeBlocks</span> <span class="o">=</span> <span class="i">document</span><span class="o">.</span><span class="i">getElementsByTagName</span>(<span class="o">&#39;</span><span class="i">code&#39;</span>);
-
-<span class="k">for</span> (<span class="i">var</span> <span class="i">i</span> <span class="o">=</span> <span class="n">0</span>; <span class="i">i</span> <span class="o">&lt;</span> <span class="i">codeBlocks</span><span class="o">.</span><span class="i">length</span>; <span class="i">i</span><span class="o">++</span>) {
-	<span class="i">codeBlocks</span>[<span class="i">i</span>]<span class="o">.</span><span class="i">className</span> <span class="o">=</span> <span class="i">codeBlocks</span>[<span class="i">i</span>]<span class="o">.</span><span class="i">getAttribute</span>(<span class="o">&#39;</span><span class="i">lang&#39;</span>);
-	<span class="i">hljs</span><span class="o">.</span><span class="i">highlightBlock</span>(<span class="i">codeBlocks</span>[<span class="i">i</span>]);
-	<span class="i">addCaption</span>(<span class="i">codeBlocks</span>[<span class="i">i</span>]);
-}
-</code></pre></td>
-</tr>
-</table>
-</script>
+<script>initMultiFunctionalCodeBlocks();</script>
 
 <div class="tip" id="fs1">val x : int<br /><br />Full name: multifunctionalarithmetic.x</div>
 <div class="tip" id="fs2">Multiple items<br />val int : value:&#39;T -&gt; int (requires member op_Explicit)<br /><br />Full name: Microsoft.FSharp.Core.Operators.int<br /><br />--------------------<br />type int = int32<br /><br />Full name: Microsoft.FSharp.Core.int<br /><br />--------------------<br />type int&lt;&#39;Measure&gt; = int<br /><br />Full name: Microsoft.FSharp.Core.int&lt;_&gt;</div>
@@ -184,30 +141,5 @@
 		</div>
     </footer>
     <script src="/javascripts/scale.fix.js"></script>
-
-	<!--
-    <script>
-
-		function addCaption(ele) {
-
-			var table = ele.parentElement.parentElement.parentElement.parentElement.parentElement;
-			var caption = document.createElement("caption");
-			var codeClass = ele.className.replace('hljs', '');
-
-			caption.innerHTML = codeClass;
-			table.insertBefore(caption, table.firstChild);
-			table.className += ' ' + codeClass;
-		}
-
-		var codeBlocks = document.getElementsByTagName('code');
-
-		for (var i = 0; i < codeBlocks.length; i++) {
-			codeBlocks[i].className = codeBlocks[i].getAttribute('lang');
-			hljs.highlightBlock(codeBlocks[i]);
-			addCaption(codeBlocks[i]);
-		}
-
-	</script>
-	-->
   </body>
 </html>
