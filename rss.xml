@@ -4,10 +4,19 @@
     <link>http://www.progletariat.com/</link>
     <description>A term used to describe the class of wage-earners in a capitalist society whose only skill of any perceived value is their ability to create computer software.</description>
     <item>
+      <title>F# / Fable / Elmish / SVG - Fairfoil</title>
+      <guid>http://www.progletariat.com//blog/2017/11-12-fsharp-fable-elmish-svg-airfoil</guid>
+      <link>http://www.progletariat.com//blog/2017/11-12-fsharp-fable-elmish-svg-airfoil/index.html</link>
+      <pubDate>Sun, 12 Dec 2917 07:19:37 GMT</pubDate>
+      <description>
+
+</description>
+    </item>
+    <item>
       <title>Architectural Views and Diagrams</title>
       <guid>http://www.progletariat.com//blog/2017/03-31-architecture-views-diagrams</guid>
       <link>http://www.progletariat.com//blog/2017/03-31-architecture-views-diagrams/index.html</link>
-      <pubDate>Wed, 31 Mar 2917 07:44:17 GMT</pubDate>
+      <pubDate>Wed, 31 Mar 2917 08:44:17 GMT</pubDate>
       <description>
 
 </description>
@@ -25,7 +34,7 @@
       <title>multi-functional-logical-operators</title>
       <guid>http://www.progletariat.com//blog/2016/07-18-multi-functional-logical</guid>
       <link>http://www.progletariat.com//blog/2016/07-18-multi-functional-logical/index.html</link>
-      <pubDate>Sat, 18 Jul 2916 07:38:02 GMT</pubDate>
+      <pubDate>Sat, 18 Jul 2916 08:38:02 GMT</pubDate>
       <description>
 
 </description>
@@ -34,7 +43,7 @@
       <title>multi-functional-maps</title>
       <guid>http://www.progletariat.com//blog/2016/07-19-multi-functional-maps</guid>
       <link>http://www.progletariat.com//blog/2016/07-19-multi-functional-maps/index.html</link>
-      <pubDate>Thu, 16 Jul 2916 07:38:02 GMT</pubDate>
+      <pubDate>Thu, 16 Jul 2916 08:38:02 GMT</pubDate>
       <description>
 
 </description>
@@ -43,7 +52,7 @@
       <title>multi-functional-strings</title>
       <guid>http://www.progletariat.com//blog/2016/07-19-multi-functional-strings</guid>
       <link>http://www.progletariat.com//blog/2016/07-19-multi-functional-strings/index.html</link>
-      <pubDate>Tue, 14 Jul 2916 07:38:02 GMT</pubDate>
+      <pubDate>Tue, 14 Jul 2916 08:38:02 GMT</pubDate>
       <description>
 
 </description>
@@ -52,7 +61,7 @@
       <title>multi-functional-lists</title>
       <guid>http://www.progletariat.com//blog/2016/07-01-multi-functional-lists</guid>
       <link>http://www.progletariat.com//blog/2016/07-01-multi-functional-lists/index.html</link>
-      <pubDate>Wed, 01 Jul 2916 09:05:10 GMT</pubDate>
+      <pubDate>Wed, 01 Jul 2916 10:05:10 GMT</pubDate>
       <description>
 
 </description>
@@ -61,7 +70,16 @@
       <title>Monads &gt;&gt;= Why Bother?</title>
       <guid>http://www.progletariat.com//blog/2015/08-12-monads-why-bother</guid>
       <link>http://www.progletariat.com//blog/2015/08-12-monads-why-bother/index.html</link>
-      <pubDate>Fri, 12 Aug 2095 08:08:30 GMT</pubDate>
+      <pubDate>Fri, 12 Aug 2095 09:08:30 GMT</pubDate>
+      <description>
+
+</description>
+    </item>
+    <item>
+      <title>F#nctional F#n - with F#</title>
+      <guid>http://www.progletariat.com//blog/2018/07-28-f-nctional-f-n-fsharp</guid>
+      <link>http://www.progletariat.com//blog/2018/07-28-f-nctional-f-n-fsharp/index.html</link>
+      <pubDate>Sat, 28 Jul 2018 10:11:17 GMT</pubDate>
       <description>
 
 </description>
